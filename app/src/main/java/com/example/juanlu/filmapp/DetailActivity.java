@@ -3,6 +3,7 @@ package com.example.juanlu.filmapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,13 +35,10 @@ public class DetailActivity extends AppCompatActivity {
         if (detailIntent.hasExtra("film")) {
             film = (Film) detailIntent.getSerializableExtra("film");
 
-            Picasso.with(this).load(film.getCover())
-                    .fit()
-                    .centerCrop()
-                    .into(mImageViewFilmCover);
+            Picasso.with(this).load(film.getCover()).into(mImageViewFilmCover);
             mTextViewFilmName.setText(film.getName());
             mTextViewFilmDate.setText(film.getDate());
-            mTextViewFilmCategorys.setText(film.getCategorys());
+            mTextViewFilmCategorys.setText(film.getCategory());
         }
     }
 }

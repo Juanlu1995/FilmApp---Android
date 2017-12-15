@@ -31,14 +31,24 @@ public class MainActivity extends AppCompatActivity {
 
         mListViewFilms = findViewById(R.id.list_view_films);
 
+        /*
+         * Creamos el adaptador
+         */
         final ArrayAdapter<Film> adapter = new ArrayAdapter<Film>(
                 this,
                 R.layout.list_item_film,
                 R.id.text_view_film,
                 mListFilms
         );
+        /*
+        Asigamos el adaptador a mLIstViewFilms
+         */
         mListViewFilms.setAdapter(adapter);
 
+        /*
+        A cada elemento de la lista (adaptador) le asignamos un evento "click",
+        por el cual cuando se pulse entraremos en una nueva ventana con información detallada del elemento
+         */
         mListViewFilms.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -50,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        Cargamos la información a colocar en el adaptador de un api.
+        Si falla, informamos en un log, si la operación sucede correctamente informamos y
+        damos la información recibida en el adaptador.
+         */
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("https://frozen-everglades-20727.herokuapp.com/api/films",
                 new TextHttpResponseHandler() {

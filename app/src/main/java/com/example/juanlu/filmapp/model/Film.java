@@ -6,15 +6,15 @@ public class Film implements Serializable{
     private String name;
     private String cover;
     private String date;
-    private String categorys;
+    private String category;
     private String created_at;
     private String updated_at;
 
-    public Film(String name, String cover, String date, String categorys, String created_at, String updated_at) {
+    public Film(String name, String cover, String date, String category, String created_at, String updated_at) {
         this.name = name;
         this.cover = cover;
         this.date = date;
-        this.categorys = categorys;
+        this.category = category;
         this.created_at = created_at;
         this.updated_at = updated_at;
     }
@@ -46,12 +46,12 @@ public class Film implements Serializable{
         this.date = date;
     }
 
-    public String getCategorys() {
-        return categorys;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategorys(String categorys) {
-        this.categorys = categorys;
+    public void setCategorys(String category) {
+        this.category = category;
     }
 
     public String getCreated_at() {

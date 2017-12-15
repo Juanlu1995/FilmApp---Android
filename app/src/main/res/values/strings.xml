@@ -6,7 +6,6 @@
     <string name="film_title">Film title</string>
     <string name="titulo">Titulo</string>
     <string name="film_categorys">Film Categorys</string>
-    <string name="category">Categorías</string>
-    <string name="category_title">Category: </string>
+    <string name="category_title">Categorys: </string>
     <string name="date_title">Date:</string>
 </resources>
